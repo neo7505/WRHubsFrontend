@@ -1,0 +1,153 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+  font-family: "Alata";
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000606;
+  padding-bottom: 15px;
+}
+
+.project-header h2 {
+  font-size: 28px;
+}
+
+/* Profile & Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  color: #000606;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #000606;
+}
+
+.profile-dropdown {
+  display: flex;
+  color: #000606;
+  padding: 10px;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #000606;
+}
+
+.tabs button {
+  padding: 10px 15px;
+  border: 1px solid #25974A;
+  background: white;
+  transition: transform 0.4s ease-in-out, background 0.3s ease;
+  color: #000606;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.tabs button:hover {
+  background: #25974A;
+  color: white;
+  transform: scale(1.05);
+}
+
+.tabs .active {
+  background: #25974A;
+  color: white;
+  
+}
+
+/* Table Wrapper */
+.table-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-bar {
+  padding: 8px;
+  width: 250px;
+  background-color: #FAFAFA;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Table Icons */
+.table-icons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #000606;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  border-right: 1px solid #ddd; 
+}
+
+th:last-child, td:last-child {
+  border-right: none; 
+}
+
+
+
+
+
+/* Alternating row colors */
+tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* White for odd rows */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #D2E8D9; /* Light green for even rows */
+}
+
+/* Checkbox styling */
+td.fixed input[type="checkbox"] {
+  margin-right: 12px;
+
+
+}
+

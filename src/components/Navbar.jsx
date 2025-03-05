@@ -8,6 +8,7 @@ import { FcInspection } from "react-icons/fc";
 import { TbCirclesRelation } from "react-icons/tb";
 import { IoIosApps } from "react-icons/io";
 import { MdOutlineEnergySavingsLeaf } from "react-icons/md";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import WRlogo from "../assets/WRlogo.png";
 
 import "./Navbar.css";
@@ -35,12 +36,19 @@ export const Navbar = () => {
     {
       title: "Project Status",
       icon: CiSettings,
-      submenu: ["Project", "Overall Status"],
+      submenu: [
+        { name: "Project", path: "/projectstatus/project" },
+        { name: "Overall Status", path: "/projectstatus/overallstatus" },
+      ],
     },
     {
       title: "CRM",
       icon: TbCirclesRelation,
-      submenu: ["HubSpot", "Zapier", "Insightly"],
+      submenu: [
+        { name: "HubSpot", path: "/hubspot" },
+        { name: "Zapier", path: "/zapier" },
+        { name: "Insightly", path: "/insightly" },
+      ],
     },
     {
       title: "Feasibility",
@@ -50,22 +58,25 @@ export const Navbar = () => {
       title: "Inspection App",
       icon: FcInspection,
       submenu: [
-        "Projects",
-        "Users",
-        "Inspectors",
-        "Inspectors Map",
-        "Inspections Calendar",
+        { name: "Projects", path: "/inspection-projects" },
+        { name: "Users", path: "/inspection-users" },
+        { name: "Inspectors", path: "/inspectors" },
+        { name: "Inspectors Map", path: "/inspectors-map" },
+        { name: "Inspections Calendar", path: "/inspections-calendar" },
       ],
     },
     {
       title: "Energy QC",
       icon: MdOutlineEnergySavingsLeaf,
-      submenu: ["Projects", "Users"],
+      submenu: [
+        { name: "Projects", path: "/energy-projects" },
+        { name: "Users", path: "/energy-users" },
+      ],
     },
     {
       title: "Report GenX",
       icon: HiOutlineDocumentReport,
-      submenu: ["Projects"],
+      submenu: [{ name: "Projects", path: "/report-projects" }],
     },
     {
       title: "QC App",
@@ -110,11 +121,11 @@ export const Navbar = () => {
                   <li
                     key={subIndex}
                     className={`submenu-item ${
-                      activeSubmenu === sub ? "active" : ""
+                      activeSubmenu === sub.name ? "active" : ""
                     }`}
-                    onClick={() => handleSubmenuClick(sub)}
+                    onClick={() => handleSubmenuClick(sub.name)}
                   >
-                    {sub}
+                    <Link to={sub.path}>{sub.name}</Link>
                   </li>
                 ))}
               </ul>
